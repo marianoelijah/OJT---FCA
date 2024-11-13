@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-poppins overflow-x-hidden;
+  }
+  .container {
+    @apply max-w-[1600px] w-full px-4 mx-auto;
+  }
+  h1 {
+    @apply text-[70px];
+  }
+  h2 {
+    @apply text-[33px];
+  }
+  h3 {
+    @apply text-[24px];
+  }
+  h4 {
+    @apply text-[16px];
+  }
+  h5 {
+    @apply text-[12px];
+  }
+  h6 {
+    @apply text-[10px];
+  }
+  p {
+    @apply text-[16px];
+  }
+}
+
+@layer components {
+  .header__nav.open {
+    @apply right-0 z-50 overflow-y-hidden;
+  }
+  .transparent {
+    @apply hidden;
+  }
+  .transparent.open {
+    @apply block fixed top-[6.3rem] left-0 h-screen w-full
+    backdrop-blur-sm duration-700 overflow-y-hidden;
+  }
+  .toggle__menu {
+    @apply flex flex-col gap-1 z-50 md:hidden lg:hidden;
+  }
+  .toggle__menu span {
+    @apply content-[*] bg-primary w-10 h-1 rounded-lg duration-700 ease-in-out;
+  }
+  .toggle__menu span:last-child {
+    @apply content-[*] bg-primary w-7 h-1 rounded-lg duration-700 ease-in-out;
+  }
+  .toggle__menu.open span {
+    @apply w-7;
+  }
+  .toggle__menu.open span:last-child {
+    @apply w-10;
+  }
+}
+
+/* ACCORDIONS */
+.quest__item{
+  @apply mb-5 max-w[35rem] mx-auto;
+}
+.quest__item h4, .quest__item i{
+  @apply bg-primary text-white px-3 py-2 font-bold transition-all flex justify-between items-center cursor-ponter;
+}
+
+.quest__item i.open{
+  @apply rotate-[900deg] transition-all;
+}
+.quest__item p{
+  @apply bg-slate-50 h-auto max-h-0 overflow-hidden transition-all text-justify delay-75;
+}
+
+.quest__item p.open{
+  @apply max-h-[50rem] bg-slate-50 p-3 transition-all text-justify delay-75;
+}
+
+/*BUTTON */
+.btn__footer{
+  
+}
+/* <div class="footer-buttons flex justify-center space-x-4">
+  <button class="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600 transition-all duration-200">Give</button>
+  <button class="bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600 transition-all duration-200">FAQ's</button>
+</div> */
